@@ -14,6 +14,8 @@
 		FC5F658D1C190ED3008BFCA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC5F658C1C190ED3008BFCA1 /* Assets.xcassets */; };
 		FC5F65901C190ED3008BFCA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5F658E1C190ED3008BFCA1 /* LaunchScreen.storyboard */; };
 		FC5F659F1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F659D1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m */; };
+		FC5F65A51C191191008BFCA1 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65A21C191191008BFCA1 /* Dog.m */; };
+		FC5F65A61C191191008BFCA1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65A41C191191008BFCA1 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		FC5F65911C190ED3008BFCA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC5F659C1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZHAddForKVO.h"; sourceTree = "<group>"; };
 		FC5F659D1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZHAddForKVO.m"; sourceTree = "<group>"; };
+		FC5F65A11C191191008BFCA1 /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		FC5F65A21C191191008BFCA1 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		FC5F65A31C191191008BFCA1 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		FC5F65A41C191191008BFCA1 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				FC5F659A1C190F5C008BFCA1 /* Class */,
+				FC5F65A01C19116F008BFCA1 /* TempClass */,
 				FC5F65831C190ED3008BFCA1 /* AppDelegate.h */,
 				FC5F65841C190ED3008BFCA1 /* AppDelegate.m */,
 				FC5F65861C190ED3008BFCA1 /* ViewController.h */,
@@ -106,6 +113,17 @@
 			children = (
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		FC5F65A01C19116F008BFCA1 /* TempClass */ = {
+			isa = PBXGroup;
+			children = (
+				FC5F65A11C191191008BFCA1 /* Dog.h */,
+				FC5F65A21C191191008BFCA1 /* Dog.m */,
+				FC5F65A31C191191008BFCA1 /* Person.h */,
+				FC5F65A41C191191008BFCA1 /* Person.m */,
+			);
+			path = TempClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5F65A61C191191008BFCA1 /* Person.m in Sources */,
 				FC5F65881C190ED3008BFCA1 /* ViewController.m in Sources */,
 				FC5F65851C190ED3008BFCA1 /* AppDelegate.m in Sources */,
+				FC5F65A51C191191008BFCA1 /* Dog.m in Sources */,
 				FC5F659F1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m in Sources */,
 				FC5F65821C190ED3008BFCA1 /* main.m in Sources */,
 			);
