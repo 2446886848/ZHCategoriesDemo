@@ -17,6 +17,7 @@
 		FC5F65A51C191191008BFCA1 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65A21C191191008BFCA1 /* Dog.m */; };
 		FC5F65A61C191191008BFCA1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65A41C191191008BFCA1 /* Person.m */; };
 		FC5F65A91C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65A81C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m */; };
+		FC5F65AC1C195E2B008BFCA1 /* UIColor+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65AB1C195E2B008BFCA1 /* UIColor+ZHAdd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		FC5F65A41C191191008BFCA1 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		FC5F65A71C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+ZHAddForRunloop.h"; sourceTree = "<group>"; };
 		FC5F65A81C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSThread+ZHAddForRunloop.m"; sourceTree = "<group>"; };
+		FC5F65AA1C195E2B008BFCA1 /* UIColor+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZHAdd.h"; sourceTree = "<group>"; };
+		FC5F65AB1C195E2B008BFCA1 /* UIColor+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZHAdd.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 		FC5F659E1C190F5C008BFCA1 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				FC5F65AA1C195E2B008BFCA1 /* UIColor+ZHAdd.h */,
+				FC5F65AB1C195E2B008BFCA1 /* UIColor+ZHAdd.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				FC5F65881C190ED3008BFCA1 /* ViewController.m in Sources */,
 				FC5F65851C190ED3008BFCA1 /* AppDelegate.m in Sources */,
 				FC5F65A51C191191008BFCA1 /* Dog.m in Sources */,
+				FC5F65AC1C195E2B008BFCA1 /* UIColor+ZHAdd.m in Sources */,
 				FC5F659F1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m in Sources */,
 				FC5F65821C190ED3008BFCA1 /* main.m in Sources */,
 			);

@@ -11,6 +11,7 @@
 #import "Person.h"
 #import "Dog.h"
 #import "NSThread+ZHAddForRunloop.h"
+#import "UIColor+ZHAdd.h"
 
 @interface ViewController ()
 
@@ -22,9 +23,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self testObjectKVO];
+    self.view.backgroundColor = [UIColor zh_colorWithRGB:0xf0ffff alpha:1.0];
     
-    [self testThreadContainsRunloop];
+    NSLog(@"%f", [self.view.backgroundColor zh_aValue]);
+//    self.view.backgroundColor = [UIColor zh_colorWithRGB:0xff0000];
+    
+//    [self testObjectKVO];
+//    
+//    [self testThreadContainsRunloop];
 }
 
 - (void)testThreadContainsRunloop
