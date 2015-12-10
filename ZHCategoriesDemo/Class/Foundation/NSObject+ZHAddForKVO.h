@@ -19,26 +19,26 @@ typedef void(^KVOCallbackBlock)(id observer, NSString *keyPath, id oldValue, id 
  *  @param keyPath  要监听的keyPath
  *  @param block    监听到变化后的回调
  */
-- (void)addObserver:(id)observer forKeyPath:(NSString *)keyPath usingBlock:(KVOCallbackBlock)block;
+- (void)zh_addObserver:(id)observer forKeyPath:(NSString *)keyPath usingBlock:(KVOCallbackBlock)block;
 
 /**
  *  移除当前对象所有的监听
  */
-- (void)removeAllBlocks;
+- (void)zh_removeAllBlocks;
 
 /**
  *  移除监听者标识对应的所有监听
  *
  *  @param observer 监听者标识
  */
-- (void)removeBlockOfObserver:(id)observer;
+- (void)zh_removeBlockOfObserver:(id)observer;
 
 /**
  *  移除所有keyPath的监听
  *
  *  @param keyPath keyPath标示
  */
-- (void)removeBlockForKeyPath:(NSString *)keyPath;
+- (void)zh_removeBlockForKeyPath:(NSString *)keyPath;
 
 /**
  *  移除指定监听者标示对用的keyPath的监听
@@ -46,6 +46,6 @@ typedef void(^KVOCallbackBlock)(id observer, NSString *keyPath, id oldValue, id 
  *  @param observer 监听者标识
  *  @param keyPath  keyPath标识
  */
-- (void)removeBlockOfObserver:(id)observer forKeyPath:(NSString *)keyPath;
+- (void)zh_removeBlockOfObserver:(id)observer forKeyPath:(NSString *)keyPath;
 
 @end

@@ -16,6 +16,7 @@
 		FC5F659F1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F659D1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m */; };
 		FC5F65A51C191191008BFCA1 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65A21C191191008BFCA1 /* Dog.m */; };
 		FC5F65A61C191191008BFCA1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65A41C191191008BFCA1 /* Person.m */; };
+		FC5F65A91C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65A81C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		FC5F65A21C191191008BFCA1 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		FC5F65A31C191191008BFCA1 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		FC5F65A41C191191008BFCA1 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		FC5F65A71C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+ZHAddForRunloop.h"; sourceTree = "<group>"; };
+		FC5F65A81C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSThread+ZHAddForRunloop.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 			children = (
 				FC5F659C1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.h */,
 				FC5F659D1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m */,
+				FC5F65A71C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.h */,
+				FC5F65A81C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5F65A91C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m in Sources */,
 				FC5F65A61C191191008BFCA1 /* Person.m in Sources */,
 				FC5F65881C190ED3008BFCA1 /* ViewController.m in Sources */,
 				FC5F65851C190ED3008BFCA1 /* AppDelegate.m in Sources */,

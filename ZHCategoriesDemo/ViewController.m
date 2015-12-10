@@ -10,6 +10,7 @@
 #import "NSObject+ZHAddForKVO.h"
 #import "Person.h"
 #import "Dog.h"
+#import "NSThread+ZHAddForRunloop.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,26 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self testObjectKVO];
+    
+    [self testThreadContainsRunloop];
+}
+
+- (void)testThreadContainsRunloop
+{
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerSchedule) userInfo:nil repeats:YES];
+//    [thread cancel];
+}
+- (void)timerSchedule
+{
+    [self performSelector:@selector(timerDo) onThread:[NSThread zh_sharedThreadWithRunloop] withObject:nil waitUntilDone:NO];
+}
+
+- (void)timerDo
+{
+    static int i = 1;
+    i++;
+
+    NSLog(@"%@", [NSThread currentThread]);
 }
 
 - (void)testObjectKVO
@@ -31,15 +52,15 @@
     
     person.dog = dog;
     
-    [dog addObserver:person  forKeyPath:@"name" usingBlock:^(id observer, NSString *keyPath, id oldValue, id newValue) {
+    [dog zh_addObserver:person  forKeyPath:@"name" usingBlock:^(id observer, NSString *keyPath, id oldValue, id newValue) {
         NSLog(@"observer = %@ keyPath = %@ oldValue = %@ ,newValue = %@",observer, keyPath, oldValue, newValue);
     } ];
     
-    [dog addObserver:self  forKeyPath:@"name" usingBlock:^(id observer, NSString *keyPath, id oldValue, id newValue) {
+    [dog zh_addObserver:self  forKeyPath:@"name" usingBlock:^(id observer, NSString *keyPath, id oldValue, id newValue) {
         NSLog(@"observer = %@ keyPath = %@ oldValue = %@ ,newValue = %@",observer, keyPath, oldValue, newValue);
     } ];
     
-    [dog addObserver:person  forKeyPath:@"age" usingBlock:^(id observer, NSString *keyPath, id oldValue, id newValue) {
+    [dog zh_addObserver:person  forKeyPath:@"age" usingBlock:^(id observer, NSString *keyPath, id oldValue, id newValue) {
         NSLog(@"observer = %@ keyPath = %@ oldValue = %@ ,newValue = %@",observer, keyPath, oldValue, newValue);
     } ];
     

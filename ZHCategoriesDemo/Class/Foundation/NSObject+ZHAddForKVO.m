@@ -78,12 +78,12 @@
  *  @param keyPath  要监听的keyPath
  *  @param block    监听到变化后的回调
  */
-- (void)addObserver:(id)observer forKeyPath:(NSString *)keyPath usingBlock:(KVOCallbackBlock)block;
+- (void)zh_addObserver:(id)observer forKeyPath:(NSString *)keyPath usingBlock:(KVOCallbackBlock)block;
 {
     NSAssert(observer, @"observer cann't be nil");
     NSAssert(keyPath, @"keyPath cann't be nil");
     
-    NSMutableDictionary *targetDictM = [self targetDict];
+    NSMutableDictionary *targetDictM = [self zh_targetDict];
     
     NSMutableArray *targetArrM = targetDictM[keyPath];
     
@@ -102,12 +102,12 @@
 /**
  *  移除当前对象所有的监听
  */
-- (void)removeAllBlocks
+- (void)zh_removeAllBlocks
 {
-    NSMutableDictionary *targetDictM = [self targetDict];
+    NSMutableDictionary *targetDictM = [self zh_targetDict];
     
     [[targetDictM allKeys] enumerateObjectsUsingBlock:^(NSString  *keyPath, NSUInteger idx, BOOL * stop) {
-        [self removeBlockForKeyPath:keyPath];
+        [self zh_removeBlockForKeyPath:keyPath];
     }];
 }
 
@@ -116,11 +116,11 @@
  *
  *  @param observer 监听者标识
  */
-- (void)removeBlockOfObserver:(id)observer
+- (void)zh_removeBlockOfObserver:(id)observer
 {
     NSAssert(observer, @"observer cann't be nil");
     
-    NSMutableDictionary *targetDictM = [self targetDict];
+    NSMutableDictionary *targetDictM = [self zh_targetDict];
     
     for (NSMutableArray *targetArrM in [targetDictM allValues]) {
         NSMutableArray *removeTargetArrM = @[].mutableCopy;
@@ -140,11 +140,11 @@
  *
  *  @param keyPath keyPath标示
  */
-- (void)removeBlockForKeyPath:(NSString *)keyPath
+- (void)zh_removeBlockForKeyPath:(NSString *)keyPath
 {
     NSAssert(keyPath, @"keyPath cann't be nil");
     
-    NSMutableDictionary *targetDictM = [self targetDict];
+    NSMutableDictionary *targetDictM = [self zh_targetDict];
     NSMutableArray *targetArrM = targetDictM[keyPath];
     
     [targetArrM enumerateObjectsUsingBlock:^(ZHKVOTarget *target, NSUInteger idx, BOOL * stop) {
@@ -159,12 +159,12 @@
  *  @param observer 监听者标识
  *  @param keyPath  keyPath标识
  */
-- (void)removeBlockOfObserver:(id)observer forKeyPath:(NSString *)keyPath
+- (void)zh_removeBlockOfObserver:(id)observer forKeyPath:(NSString *)keyPath
 {
     NSAssert(observer, @"observer cann't be nil");
     NSAssert(keyPath, @"keyPath cann't be nil");
     
-    NSMutableDictionary *targetDictM = [self targetDict];
+    NSMutableDictionary *targetDictM = [self zh_targetDict];
     
     NSMutableArray *targetArrM = targetDictM[keyPath];
     if (!targetArrM) {
@@ -182,13 +182,13 @@
     [targetArrM removeObjectsInArray:removeTargetArrM];
 }
 
-- (NSMutableDictionary *)targetDict
+- (NSMutableDictionary *)zh_targetDict
 {
-    NSMutableDictionary *targetDictM = objc_getAssociatedObject(self, @selector(addObserver:forKeyPath:usingBlock:));
+    NSMutableDictionary *targetDictM = objc_getAssociatedObject(self, @selector(zh_addObserver:forKeyPath:usingBlock:));
     
     if (!targetDictM || ![targetDictM isKindOfClass:[NSMutableDictionary class]]) {
         targetDictM = @{}.mutableCopy;
-        objc_setAssociatedObject(self, @selector(addObserver:forKeyPath:usingBlock:), targetDictM, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, @selector(zh_addObserver:forKeyPath:usingBlock:), targetDictM, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return targetDictM;
 }
