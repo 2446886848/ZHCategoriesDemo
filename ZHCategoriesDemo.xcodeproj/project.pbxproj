@@ -20,6 +20,7 @@
 		FC5F65A61C191191008BFCA1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65A41C191191008BFCA1 /* Person.m */; };
 		FC5F65A91C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65A81C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m */; };
 		FC5F65AC1C195E2B008BFCA1 /* UIColor+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65AB1C195E2B008BFCA1 /* UIColor+ZHAdd.m */; };
+		FCA1A69F1C1BE78C003B1644 /* NSObject+ZHAddForMethodSwizzing.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA1A69E1C1BE78C003B1644 /* NSObject+ZHAddForMethodSwizzing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		FC5F65A81C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSThread+ZHAddForRunloop.m"; sourceTree = "<group>"; };
 		FC5F65AA1C195E2B008BFCA1 /* UIColor+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZHAdd.h"; sourceTree = "<group>"; };
 		FC5F65AB1C195E2B008BFCA1 /* UIColor+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZHAdd.m"; sourceTree = "<group>"; };
+		FCA1A69D1C1BE78C003B1644 /* NSObject+ZHAddForMethodSwizzing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZHAddForMethodSwizzing.h"; sourceTree = "<group>"; };
+		FCA1A69E1C1BE78C003B1644 /* NSObject+ZHAddForMethodSwizzing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZHAddForMethodSwizzing.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				FC5F659D1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m */,
 				FC5F65A71C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.h */,
 				FC5F65A81C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m */,
+				FCA1A69D1C1BE78C003B1644 /* NSObject+ZHAddForMethodSwizzing.h */,
+				FCA1A69E1C1BE78C003B1644 /* NSObject+ZHAddForMethodSwizzing.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				FC5F65881C190ED3008BFCA1 /* ViewController.m in Sources */,
 				FC5F65851C190ED3008BFCA1 /* AppDelegate.m in Sources */,
 				FC5F65A51C191191008BFCA1 /* Dog.m in Sources */,
+				FCA1A69F1C1BE78C003B1644 /* NSObject+ZHAddForMethodSwizzing.m in Sources */,
 				FC5F65AC1C195E2B008BFCA1 /* UIColor+ZHAdd.m in Sources */,
 				FC5D005D1C1BC4D800BEA2A3 /* UIView+ZHAdd.m in Sources */,
 				FC5F659F1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m in Sources */,
