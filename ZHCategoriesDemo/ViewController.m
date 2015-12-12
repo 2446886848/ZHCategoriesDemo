@@ -13,6 +13,7 @@
 #import "NSThread+ZHAddForRunloop.h"
 #import "UIColor+ZHAdd.h"
 #import "UIView+ZHAdd.h"
+#import "UIImage+ZHAdd.h"
 
 @interface ViewController ()
 
@@ -34,7 +35,20 @@
 //    
 //    [self testThreadContainsRunloop];
     
-    [self testViewCategories];
+//    [self testViewCategories];
+    [self testRoundedImage];
+}
+
+- (void)testRoundedImage
+{
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    imageView.backgroundColor = [UIColor yellowColor];
+    UIImage *image = [UIImage imageNamed:@"add"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        imageView.image = [image zh_imageWithClearRoundWidth:10.0];
+    });
+    
+    [self.view addSubview:imageView];
 }
 
 - (void)testViewCategories
