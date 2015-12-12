@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC3345BB1C1BC7740067A278 /* woniu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC3345BA1C1BC7740067A278 /* woniu.jpg */; };
+		FC5D005D1C1BC4D800BEA2A3 /* UIView+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D005C1C1BC4D800BEA2A3 /* UIView+ZHAdd.m */; };
 		FC5F65821C190ED3008BFCA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65811C190ED3008BFCA1 /* main.m */; };
 		FC5F65851C190ED3008BFCA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65841C190ED3008BFCA1 /* AppDelegate.m */; };
 		FC5F65881C190ED3008BFCA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65871C190ED3008BFCA1 /* ViewController.m */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC3345BA1C1BC7740067A278 /* woniu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woniu.jpg; sourceTree = "<group>"; };
+		FC5D005B1C1BC4D800BEA2A3 /* UIView+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZHAdd.h"; sourceTree = "<group>"; };
+		FC5D005C1C1BC4D800BEA2A3 /* UIView+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZHAdd.m"; sourceTree = "<group>"; };
 		FC5F657D1C190ED3008BFCA1 /* ZHCategoriesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHCategoriesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5F65811C190ED3008BFCA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC5F65831C190ED3008BFCA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 				FC5F65841C190ED3008BFCA1 /* AppDelegate.m */,
 				FC5F65861C190ED3008BFCA1 /* ViewController.h */,
 				FC5F65871C190ED3008BFCA1 /* ViewController.m */,
+				FC3345BA1C1BC7740067A278 /* woniu.jpg */,
 				FC5F65891C190ED3008BFCA1 /* Main.storyboard */,
 				FC5F658C1C190ED3008BFCA1 /* Assets.xcassets */,
 				FC5F658E1C190ED3008BFCA1 /* LaunchScreen.storyboard */,
@@ -121,6 +127,8 @@
 			children = (
 				FC5F65AA1C195E2B008BFCA1 /* UIColor+ZHAdd.h */,
 				FC5F65AB1C195E2B008BFCA1 /* UIColor+ZHAdd.m */,
+				FC5D005B1C1BC4D800BEA2A3 /* UIView+ZHAdd.h */,
+				FC5D005C1C1BC4D800BEA2A3 /* UIView+ZHAdd.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 			files = (
 				FC5F65901C190ED3008BFCA1 /* LaunchScreen.storyboard in Resources */,
 				FC5F658D1C190ED3008BFCA1 /* Assets.xcassets in Resources */,
+				FC3345BB1C1BC7740067A278 /* woniu.jpg in Resources */,
 				FC5F658B1C190ED3008BFCA1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +221,7 @@
 				FC5F65851C190ED3008BFCA1 /* AppDelegate.m in Sources */,
 				FC5F65A51C191191008BFCA1 /* Dog.m in Sources */,
 				FC5F65AC1C195E2B008BFCA1 /* UIColor+ZHAdd.m in Sources */,
+				FC5D005D1C1BC4D800BEA2A3 /* UIView+ZHAdd.m in Sources */,
 				FC5F659F1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m in Sources */,
 				FC5F65821C190ED3008BFCA1 /* main.m in Sources */,
 			);

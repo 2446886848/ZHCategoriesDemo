@@ -12,6 +12,7 @@
 #import "Dog.h"
 #import "NSThread+ZHAddForRunloop.h"
 #import "UIColor+ZHAdd.h"
+#import "UIView+ZHAdd.h"
 
 @interface ViewController ()
 
@@ -26,11 +27,86 @@
     self.view.backgroundColor = [UIColor zh_colorWithRGB:0xf0ffff alpha:1.0];
     
     NSLog(@"%f", [self.view.backgroundColor zh_aValue]);
+    
 //    self.view.backgroundColor = [UIColor zh_colorWithRGB:0xff0000];
     
 //    [self testObjectKVO];
 //    
 //    [self testThreadContainsRunloop];
+    
+    [self testViewCategories];
+}
+
+- (void)testViewCategories
+{
+    UIImage *image = [UIImage imageNamed:@"woniu.jpg"];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    
+    view.x = 12323;
+    NSAssert(view.x == 12323, @"");
+    
+    view.y = 422;
+    NSAssert(view.y == 422, @"");
+    
+    view.width = 134;
+    NSAssert(view.width == 134, @"");
+    
+    view.height = 543543;
+    NSAssert(view.height == 543543, @"");
+    
+    view.origin = CGPointMake(43243, 7676);
+    NSAssert(CGPointEqualToPoint(view.origin, CGPointMake(43243, 7676)), @"");
+    
+    view.size = CGSizeMake(3543543, 65465);
+    NSAssert(CGSizeEqualToSize(view.size, CGSizeMake(3543543, 65465)), @"");
+    
+    view.centerX = 5645;
+    NSAssert(view.centerX == 5645, @"");
+    
+    view.centerY = 6546;
+    NSAssert(view.centerY == 6546, @"");
+    
+    view.left = 54353;
+    NSAssert(view.left == 54353, @"");
+    
+    view.right = 54543;
+    NSAssert(view.right == 54543, @"");
+    
+    view.top= 42552;
+    NSAssert(view.top == 42552, @"");
+    
+    view.bottom = 7777;
+    NSAssert(view.bottom == 7777, @"");
+    
+    view.topLeft = CGPointMake(24234, 65465);
+    NSAssert(CGPointEqualToPoint(view.topLeft, CGPointMake(24234, 65465)), @"");
+    
+    view.topRight = CGPointMake(2423422, 654232365);
+    NSAssert(CGPointEqualToPoint(view.topRight, CGPointMake(2423422, 654232365)), @"");
+    
+    view.bottomLeft = CGPointMake(2425534, 6546665);
+    NSAssert(CGPointEqualToPoint(view.bottomLeft, CGPointMake(2425534, 6546665)), @"");
+    
+    view.bottomRight = CGPointMake(2465765234, 6523233465);
+    NSAssert(CGPointEqualToPoint(view.bottomRight, CGPointMake(2465765234, 6523233465)), @"");
+    
+    
+    view.layer.contents = (__bridge id)image.CGImage;
+    
+    NSLog(@"%@", view.viewController);
+    [self.view addSubview:view];
+    NSLog(@"%@", view.viewController);
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UIImage *capturedImage = [view zh_imageCaptured];
+        
+        UIView *newView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 200, 200)];
+        newView.backgroundColor = [UIColor redColor];
+        newView.layer.contents = (__bridge id)capturedImage.CGImage;
+        
+        [self.view addSubview:newView];
+    });
 }
 
 - (void)testThreadContainsRunloop
