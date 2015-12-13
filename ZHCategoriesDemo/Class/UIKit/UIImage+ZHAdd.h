@@ -19,4 +19,20 @@
  */
 - (UIImage *)zh_imageWithClearRoundWidth:(CGFloat)roundWidth;
 
+/**
+ *  获取应用的启动图
+ *
+ *  @return 应用的启动图
+ */
++ (instancetype)zh_launchImage;
+
+/**
+ *  根据传入的图片名称，查找适合的图片路径
+ *
+ *  @param imageName 图片名称
+ *
+ *  @return 图片路径
+ */
++ (NSString *)zh_availablePathWithImageName:(NSString *)imageName;
+
 @end

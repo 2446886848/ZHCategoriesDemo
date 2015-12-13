@@ -14,6 +14,8 @@
 #import "UIColor+ZHAdd.h"
 #import "UIView+ZHAdd.h"
 #import "UIImage+ZHAdd.h"
+#import "UIApplication+ZHAdd.h"
+#import "NSBundle+ZHAdd.h"
 
 @interface ViewController ()
 
@@ -36,7 +38,22 @@
 //    [self testThreadContainsRunloop];
     
 //    [self testViewCategories];
+    
     [self testRoundedImage];
+//    [self testApplicationPath];
+    
+//    [self testBundle];
+}
+
+- (void)testBundle
+{
+    NSLog(@"bundleName = %@, bundleId = %@, bundleAppVersion = %@, bundleBuildVersion = %@", [NSBundle zh_bundleName], [NSBundle zh_bundleID], [NSBundle zh_appVersion], [NSBundle zh_appBuildVersion]);
+}
+
+- (void)testApplicationPath
+{
+    NSLog(@"%@", [UIApplication zh_documentUrl]);
+    NSLog(@"%@", [UIApplication zh_documentPath]);
 }
 
 - (void)testRoundedImage
@@ -49,6 +66,10 @@
     });
     
     [self.view addSubview:imageView];
+    
+    UIImageView *launchImageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 300, 200, 200)];
+    launchImageView.image = [UIImage zh_launchImage];
+    [self.view addSubview:launchImageView];
 }
 
 - (void)testViewCategories
