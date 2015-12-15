@@ -16,6 +16,8 @@
 #import "UIImage+ZHAdd.h"
 #import "UIApplication+ZHAdd.h"
 #import "NSBundle+ZHAdd.h"
+#import "UIControl+ZHAdd.h"
+#import "ZHControl.h"
 
 @interface ViewController ()
 
@@ -39,10 +41,35 @@
     
 //    [self testViewCategories];
     
-    [self testRoundedImage];
+//    [self testRoundedImage];
 //    [self testApplicationPath];
     
 //    [self testBundle];
+    
+    [self testControlBlock];
+    
+}
+
+- (void)testControlBlock
+{
+    __unsafe_unretained id value = nil;
+    {
+        ZHControl *control = [[ZHControl alloc] init];
+        control.frame = CGRectMake(100, 100, 100, 100);
+        control.backgroundColor = [UIColor redColor];
+        [self.view addSubview:control];
+        
+        [control zh_addTarget:self forControlEvents:UIControlEventTouchUpInside withBlock:^(id sender) {
+            NSLog(@"%@", control);
+        }];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [control removeFromSuperview];
+        });
+        value = control;
+    }
+    
+    
 }
 
 - (void)testBundle

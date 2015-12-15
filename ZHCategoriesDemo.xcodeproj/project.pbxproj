@@ -26,6 +26,8 @@
 		FCF007BC1C1D118A00C2B299 /* NSBundle+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF007BB1C1D118A00C2B299 /* NSBundle+ZHAdd.m */; };
 		FCF007C21C1D1A9500C2B299 /* UIApplication+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF007C11C1D1A9500C2B299 /* UIApplication+ZHAdd.m */; };
 		FCF566981C1EEE5D00D7242C /* UIViewController+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF566971C1EEE5D00D7242C /* UIViewController+ZHAdd.m */; };
+		FCF5669E1C1EF0CF00D7242C /* CALayer+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5669D1C1EF0CF00D7242C /* CALayer+ZHAdd.m */; };
+		FCF566A11C1EF72C00D7242C /* ZHControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF566A01C1EF72C00D7242C /* ZHControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,10 @@
 		FCF007C11C1D1A9500C2B299 /* UIApplication+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ZHAdd.m"; sourceTree = "<group>"; };
 		FCF566961C1EEE5D00D7242C /* UIViewController+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZHAdd.h"; sourceTree = "<group>"; };
 		FCF566971C1EEE5D00D7242C /* UIViewController+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZHAdd.m"; sourceTree = "<group>"; };
+		FCF5669C1C1EF0CF00D7242C /* CALayer+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ZHAdd.h"; sourceTree = "<group>"; };
+		FCF5669D1C1EF0CF00D7242C /* CALayer+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+ZHAdd.m"; sourceTree = "<group>"; };
+		FCF5669F1C1EF72C00D7242C /* ZHControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHControl.h; sourceTree = "<group>"; };
+		FCF566A01C1EF72C00D7242C /* ZHControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,8 @@
 				FCF007C11C1D1A9500C2B299 /* UIApplication+ZHAdd.m */,
 				FCF566961C1EEE5D00D7242C /* UIViewController+ZHAdd.h */,
 				FCF566971C1EEE5D00D7242C /* UIViewController+ZHAdd.m */,
+				FCF5669C1C1EF0CF00D7242C /* CALayer+ZHAdd.h */,
+				FCF5669D1C1EF0CF00D7242C /* CALayer+ZHAdd.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -168,6 +176,8 @@
 				FC5F65A21C191191008BFCA1 /* Dog.m */,
 				FC5F65A31C191191008BFCA1 /* Person.h */,
 				FC5F65A41C191191008BFCA1 /* Person.m */,
+				FCF5669F1C1EF72C00D7242C /* ZHControl.h */,
+				FCF566A01C1EF72C00D7242C /* ZHControl.m */,
 			);
 			path = TempClass;
 			sourceTree = "<group>";
@@ -244,6 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF5669E1C1EF0CF00D7242C /* CALayer+ZHAdd.m in Sources */,
+				FCF566A11C1EF72C00D7242C /* ZHControl.m in Sources */,
 				FCF566981C1EEE5D00D7242C /* UIViewController+ZHAdd.m in Sources */,
 				FC5F65A91C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m in Sources */,
 				FC5F65A61C191191008BFCA1 /* Person.m in Sources */,
