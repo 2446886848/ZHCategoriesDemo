@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC1246081C1C3CDF0081FE47 /* UIImage+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1246071C1C3CDF0081FE47 /* UIImage+ZHAdd.m */; };
 		FC12460A1C1C46CC0081FE47 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = FC1246091C1C46CC0081FE47 /* add.png */; };
+		FC2AD2371C2658CA00C3BB25 /* UIControl+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2AD2361C2658CA00C3BB25 /* UIControl+ZHAdd.m */; };
 		FC3345BB1C1BC7740067A278 /* woniu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC3345BA1C1BC7740067A278 /* woniu.jpg */; };
 		FC5D005D1C1BC4D800BEA2A3 /* UIView+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D005C1C1BC4D800BEA2A3 /* UIView+ZHAdd.m */; };
 		FC5F65821C190ED3008BFCA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65811C190ED3008BFCA1 /* main.m */; };
@@ -34,6 +35,8 @@
 		FC1246061C1C3CDF0081FE47 /* UIImage+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZHAdd.h"; sourceTree = "<group>"; };
 		FC1246071C1C3CDF0081FE47 /* UIImage+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZHAdd.m"; sourceTree = "<group>"; };
 		FC1246091C1C46CC0081FE47 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		FC2AD2351C2658CA00C3BB25 /* UIControl+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ZHAdd.h"; sourceTree = "<group>"; };
+		FC2AD2361C2658CA00C3BB25 /* UIControl+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ZHAdd.m"; sourceTree = "<group>"; };
 		FC3345BA1C1BC7740067A278 /* woniu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woniu.jpg; sourceTree = "<group>"; };
 		FC5D005B1C1BC4D800BEA2A3 /* UIView+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZHAdd.h"; sourceTree = "<group>"; };
 		FC5D005C1C1BC4D800BEA2A3 /* UIView+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZHAdd.m"; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				FC5F65AB1C195E2B008BFCA1 /* UIColor+ZHAdd.m */,
 				FC5D005B1C1BC4D800BEA2A3 /* UIView+ZHAdd.h */,
 				FC5D005C1C1BC4D800BEA2A3 /* UIView+ZHAdd.m */,
+				FC2AD2351C2658CA00C3BB25 /* UIControl+ZHAdd.h */,
+				FC2AD2361C2658CA00C3BB25 /* UIControl+ZHAdd.m */,
 				FC1246061C1C3CDF0081FE47 /* UIImage+ZHAdd.h */,
 				FC1246071C1C3CDF0081FE47 /* UIImage+ZHAdd.m */,
 				FCF007C01C1D1A9500C2B299 /* UIApplication+ZHAdd.h */,
@@ -266,6 +271,7 @@
 				FC5F65AC1C195E2B008BFCA1 /* UIColor+ZHAdd.m in Sources */,
 				FC5D005D1C1BC4D800BEA2A3 /* UIView+ZHAdd.m in Sources */,
 				FCF007BC1C1D118A00C2B299 /* NSBundle+ZHAdd.m in Sources */,
+				FC2AD2371C2658CA00C3BB25 /* UIControl+ZHAdd.m in Sources */,
 				FCF007C21C1D1A9500C2B299 /* UIApplication+ZHAdd.m in Sources */,
 				FC1246081C1C3CDF0081FE47 /* UIImage+ZHAdd.m in Sources */,
 				FC5F659F1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m in Sources */,

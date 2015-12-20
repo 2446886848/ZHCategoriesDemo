@@ -60,7 +60,7 @@
         return nil;
     }
     NSString *launchImagePath = [self zh_availablePathWithImageName:launchImageName];
-    
+
     return [UIImage imageWithContentsOfFile:launchImagePath];
 }
 

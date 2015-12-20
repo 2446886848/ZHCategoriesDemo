@@ -40,13 +40,6 @@
 
 @implementation UIView (ZHAddForFrame)
 
-//@property (nonatomic, assign) CGFloat x;
-//@property (nonatomic, assign) CGFloat y;
-//@property (nonatomic, assign) CGFloat width;
-//@property (nonatomic, assign) CGFloat height;
-//@property (nonatomic, assign) CGPoint origin;
-//@property (nonatomic, assign) CGSize size;
-
 - (CGFloat)x
 {
     return self.frame.origin.x;
@@ -107,8 +100,6 @@
     self.height = size.height;
 }
 
-//@property (nonatomic, assign) CGFloat centerX;
-//@property (nonatomic, assign) CGFloat centerY;
 - (CGFloat)centerX
 {
     return self.center.x;
@@ -128,11 +119,6 @@
     CGPoint oldCenter = self.center;
     self.center = CGPointMake(oldCenter.x, centerY);
 }
-
-//@property (nonatomic, assign) CGFloat left;
-//@property (nonatomic, assign) CGFloat right;
-//@property (nonatomic, assign) CGFloat top;
-//@property (nonatomic, assign) CGFloat bottom;
 
 - (CGFloat)left
 {
@@ -169,11 +155,6 @@
 {
     self.y = bottom - self.height;
 }
-
-//@property (nonatomic, assign) CGPoint topLeft;
-//@property (nonatomic, assign) CGPoint topRight;
-//@property (nonatomic, assign) CGPoint bottomLeft;
-//@property (nonatomic, assign) CGPoint bottomRight;
 
 - (CGPoint)topLeft
 {

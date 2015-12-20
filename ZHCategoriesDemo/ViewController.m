@@ -13,6 +13,7 @@
 #import "NSThread+ZHAddForRunloop.h"
 #import "UIColor+ZHAdd.h"
 #import "UIView+ZHAdd.h"
+#import "CALayer+ZHAdd.h"
 #import "UIImage+ZHAdd.h"
 #import "UIApplication+ZHAdd.h"
 #import "NSBundle+ZHAdd.h"
@@ -40,13 +41,14 @@
 //    [self testThreadContainsRunloop];
     
 //    [self testViewCategories];
+    [self testLayerCategories];
     
 //    [self testRoundedImage];
 //    [self testApplicationPath];
     
 //    [self testBundle];
     
-    [self testControlBlock];
+//    [self testControlBlock];
     
 }
 
@@ -169,6 +171,59 @@
         
         [self.view addSubview:newView];
     });
+}
+
+- (void)testLayerCategories
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    
+    view.layer.x = 12323;
+    NSAssert(view.layer.x == 12323, @"");
+    
+    view.layer.y = 422;
+    NSAssert(view.layer.y == 422, @"");
+    
+    view.layer.width = 134;
+    NSAssert(view.layer.width == 134, @"");
+    
+    view.layer.height = 543543;
+    NSAssert(view.layer.height == 543543, @"");
+    
+    view.layer.origin = CGPointMake(43243, 7676);
+    NSAssert(CGPointEqualToPoint(view.layer.origin, CGPointMake(43243, 7676)), @"");
+    
+    view.layer.size = CGSizeMake(3543543, 65465);
+    NSAssert(CGSizeEqualToSize(view.layer.size, CGSizeMake(3543543, 65465)), @"");
+    
+    view.layer.centerX = 5645;
+    NSAssert(view.layer.centerX == 5645, @"");
+    
+    view.layer.centerY = 6546;
+    NSAssert(view.layer.centerY == 6546, @"");
+    
+    view.layer.left = 54353;
+    NSAssert(view.layer.left == 54353, @"");
+    
+    view.layer.right = 54543;
+    NSAssert(view.layer.right == 54543, @"");
+    
+    view.layer.top= 42552;
+    NSAssert(view.layer.top == 42552, @"");
+    
+    view.layer.bottom = 7777;
+    NSAssert(view.layer.bottom == 7777, @"");
+    
+    view.layer.topLeft = CGPointMake(24234, 65465);
+    NSAssert(CGPointEqualToPoint(view.layer.topLeft, CGPointMake(24234, 65465)), @"");
+    
+    view.layer.topRight = CGPointMake(2423422, 654232365);
+    NSAssert(CGPointEqualToPoint(view.layer.topRight, CGPointMake(2423422, 654232365)), @"");
+    
+    view.layer.bottomLeft = CGPointMake(2425534, 6546665);
+    NSAssert(CGPointEqualToPoint(view.layer.bottomLeft, CGPointMake(2425534, 6546665)), @"");
+    
+    view.layer.bottomRight = CGPointMake(2465765234, 6523233465);
+    NSAssert(CGPointEqualToPoint(view.layer.bottomRight, CGPointMake(2465765234, 6523233465)), @"");
 }
 
 - (void)testThreadContainsRunloop
