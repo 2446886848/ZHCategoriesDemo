@@ -81,20 +81,20 @@
     NSArray *scaleArr = nil;
     switch ((UInt8)[UIScreen mainScreen].scale) {
         case 3:
-            scaleArr = @[@"3x", @"2x", @""];
+            scaleArr = @[@"@3x", @"@2x", @""];
             break;
         case 2:
-            scaleArr = @[@"2x", @"", @"3x"];
+            scaleArr = @[@"@2x", @"", @"@3x"];
             break;
         case 1:
-            scaleArr = @[@"", @"2x", @"3x"];
+            scaleArr = @[@"", @"@2x", @"@3x"];
             break;
         default:
             break;
     }
     
     for (NSString *scaleStr in scaleArr) {
-        NSString *combinedImageName = [imageName stringByAppendingFormat:@"@%@.png", scaleStr];
+        NSString *combinedImageName = [imageName stringByAppendingFormat:@"%@.png", scaleStr];
         NSString *imagePath = [[NSBundle mainBundle] pathForResource:combinedImageName ofType:nil];
         if (imagePath) {
             return imagePath;
