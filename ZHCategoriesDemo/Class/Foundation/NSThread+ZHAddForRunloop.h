@@ -11,10 +11,17 @@
 @interface NSThread (ZHAddForRunloop)
 
 /**
- *  返回一个带runloop的NSThread 单例
+ *  返回一个带有runloop的线程实例
  *
- *  @return 带runloop的NSThread 单例
+ *  @param threadName 线程的名称
+ *
+ *  @return 带有runloop的线程实例
  */
-+ (instancetype)zh_sharedThreadWithRunloop;
++ (instancetype)zh_threadWithRunloopNamed:(NSString *)threadName;
+
+/**
+ *  结束当前线程
+ */
+- (void)zh_exit;
 
 @end
