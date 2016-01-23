@@ -11,11 +11,11 @@
 
 @interface ZHControlEventTarget : NSObject
 
-@property (nonatomic, unsafe_unretained) id target;
+@property (nonatomic, assign) const void *key;
 @property (nonatomic, assign) UIControlEvents controlEvents;
 @property (nonatomic, copy) ZHControlCallBackBlock callBackBlock;
 
-- (instancetype)initWithTarget:(id)target contolEvents:(UIControlEvents)controlEvents callBackBlock:(ZHControlCallBackBlock)callBackBlock;
+- (instancetype)initWithKey:(const void *)key contolEvents:(UIControlEvents)controlEvents callBackBlock:(ZHControlCallBackBlock)callBackBlock;
 
 - (void)invoke:(id)sender;
 
@@ -23,19 +23,14 @@
 
 @implementation ZHControlEventTarget
 
-- (instancetype)initWithTarget:(id)target contolEvents:(UIControlEvents)controlEvents callBackBlock:(ZHControlCallBackBlock)callBackBlock
+- (instancetype)initWithKey:(const void *)key contolEvents:(UIControlEvents)controlEvents callBackBlock:(ZHControlCallBackBlock)callBackBlock
 {
     if (self = [super init]) {
-        self.target = target;
+        self.key = key;
         self.controlEvents = controlEvents;
         self.callBackBlock = callBackBlock;
     }
     return self;
-}
-
-- (void)dealloc
-{
-    NSLog(@"ZHControlEventTarget dealloc");
 }
 
 - (void)invoke:(id)sender
@@ -47,7 +42,7 @@
 
 @implementation UIControl (ZHAdd)
 
-- (void)zh_addTarget:(id)target forControlEvents:(UIControlEvents)controlEvents withBlock:(ZHControlCallBackBlock)callBackBlock
+- (void)addBlockForControlEvents:(UIControlEvents)controlEvents key:(const void *)key block:(ZHControlCallBackBlock)callBackBlock
 {
     NSAssert(controlEvents, @"controlEvents cann't be nil");
     NSAssert(callBackBlock, @"callBackBlock cann't be nil");
@@ -55,9 +50,20 @@
         return;
     }
     
-    ZHControlEventTarget *eventTarget = [[ZHControlEventTarget alloc] initWithTarget:target contolEvents:controlEvents callBackBlock:callBackBlock];
+    ZHControlEventTarget *eventTarget = [[ZHControlEventTarget alloc] initWithKey:key contolEvents:controlEvents callBackBlock:callBackBlock];
     [self addTarget:eventTarget action:@selector(invoke:) forControlEvents:controlEvents];
     [[self zh_eventTargetArrM] addObject:eventTarget];
+}
+
+- (void)removeControlEventsBlockFroKey:(const void *)key
+{
+    NSMutableArray *deleteTargetArrM = @[].mutableCopy;
+    for (ZHControlEventTarget *eventTarget in [self zh_eventTargetArrM]) {
+        if (eventTarget.key == key) {
+            [deleteTargetArrM addObject:eventTarget];
+        }
+    }
+    [[self zh_eventTargetArrM] removeObjectsInArray:deleteTargetArrM];
 }
 
 - (NSMutableArray *)zh_eventTargetArrM

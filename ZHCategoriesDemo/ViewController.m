@@ -41,14 +41,14 @@
 //    [self testThreadContainsRunloop];
     
 //    [self testViewCategories];
-    [self testLayerCategories];
+//    [self testLayerCategories];
     
 //    [self testRoundedImage];
 //    [self testApplicationPath];
     
 //    [self testBundle];
     
-//    [self testControlBlock];
+    [self testControlBlock];
     
 }
 
@@ -61,12 +61,12 @@
         control.backgroundColor = [UIColor redColor];
         [self.view addSubview:control];
         
-        [control zh_addTarget:self forControlEvents:UIControlEventTouchUpInside withBlock:^(id sender) {
-            NSLog(@"%@", control);
+        [control addBlockForControlEvents:UIControlEventTouchUpInside key:@selector(testControlBlock) block:^(id sender) {
+            NSLog(@"%@", sender);
         }];
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [control removeFromSuperview];
+            [control removeControlEventsBlockFroKey:@selector(testControlBlock)];
         });
         value = control;
     }
@@ -233,7 +233,7 @@
 }
 - (void)timerSchedule
 {
-    [self performSelector:@selector(timerDo) onThread:[NSThread zh_sharedThreadWithRunloop] withObject:nil waitUntilDone:NO];
+    [self performSelector:@selector(timerDo) onThread:[NSThread zh_threadWithRunloopNamed:@"aaa"] withObject:nil waitUntilDone:NO];
 }
 
 - (void)timerDo

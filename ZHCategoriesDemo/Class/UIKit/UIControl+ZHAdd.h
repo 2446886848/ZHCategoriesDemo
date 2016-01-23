@@ -13,12 +13,19 @@ typedef void(^ZHControlCallBackBlock)(id sender);
 @interface UIControl (ZHAdd)
 
 /**
- *  为一个UIControl添加事件
+ *  为UIControl对象的某一对象添加block回调
  *
- *  @param target        添加的
- *  @param controlEvents <#controlEvents description#>
- *  @param callBackBlock <#callBackBlock description#>
+ *  @param controlEvents 事件
+ *  @param key           标识的key
+ *  @param callBackBlock 回调block
  */
-- (void)zh_addTarget:(id)target forControlEvents:(UIControlEvents)controlEvents withBlock:(ZHControlCallBackBlock)callBackBlock;
+- (void)addBlockForControlEvents:(UIControlEvents)controlEvents key:(const void *)key block:(ZHControlCallBackBlock)callBackBlock;
+
+/**
+ *  删除key对应的事件响应
+ *
+ *  @param key 标识的key
+ */
+- (void)removeControlEventsBlockFroKey:(const void *)key;
 
 @end
