@@ -45,24 +45,24 @@
 
 @interface UIView (ZHAddForFrame)
 
-@property (nonatomic, assign) CGFloat x;
-@property (nonatomic, assign) CGFloat y;
-@property (nonatomic, assign) CGFloat width;
-@property (nonatomic, assign) CGFloat height;
-@property (nonatomic, assign) CGPoint origin;
-@property (nonatomic, assign) CGSize size;
+@property (nonatomic, assign) CGFloat zh_x;
+@property (nonatomic, assign) CGFloat zh_y;
+@property (nonatomic, assign) CGFloat zh_width;
+@property (nonatomic, assign) CGFloat zh_height;
+@property (nonatomic, assign) CGPoint zh_origin;
+@property (nonatomic, assign) CGSize  zh_size;
 
-@property (nonatomic, assign) CGFloat centerX;
-@property (nonatomic, assign) CGFloat centerY;
+@property (nonatomic, assign) CGFloat zh_centerX;
+@property (nonatomic, assign) CGFloat zh_centerY;
 
-@property (nonatomic, assign) CGFloat left;
-@property (nonatomic, assign) CGFloat right;
-@property (nonatomic, assign) CGFloat top;
-@property (nonatomic, assign) CGFloat bottom;
+@property (nonatomic, assign) CGFloat zh_left;
+@property (nonatomic, assign) CGFloat zh_right;
+@property (nonatomic, assign) CGFloat zh_top;
+@property (nonatomic, assign) CGFloat zh_bottom;
 
-@property (nonatomic, assign) CGPoint topLeft;
-@property (nonatomic, assign) CGPoint topRight;
-@property (nonatomic, assign) CGPoint bottomLeft;
-@property (nonatomic, assign) CGPoint bottomRight;
+@property (nonatomic, assign) CGPoint zh_topLeft;
+@property (nonatomic, assign) CGPoint zh_topRight;
+@property (nonatomic, assign) CGPoint zh_bottomLeft;
+@property (nonatomic, assign) CGPoint zh_bottomRight;
 
 @end

@@ -40,160 +40,165 @@
 
 @implementation UIView (ZHAddForFrame)
 
-- (CGFloat)x
+- (CGFloat)zh_x
 {
     return self.frame.origin.x;
 }
-- (void)setX:(CGFloat)x
+- (void)setZh_x:(CGFloat)zh_x
 {
     CGRect oldFrame = self.frame;
-    self.frame = CGRectMake(x, oldFrame.origin.y, oldFrame.size.width, oldFrame.size.height);
+    self.frame = CGRectMake(zh_x, oldFrame.origin.y, oldFrame.size.width, oldFrame.size.height);
 }
 
-- (CGFloat)y
+- (CGFloat)zh_y
 {
     return self.frame.origin.y;
 }
-- (void)setY:(CGFloat)y
+- (void)setZh_y:(CGFloat)zh_y
 {
     CGRect oldFrame = self.frame;
-    self.frame = CGRectMake(oldFrame.origin.x, y, oldFrame.size.width, oldFrame.size.height);
+    self.frame = CGRectMake(oldFrame.origin.x, zh_y, oldFrame.size.width, oldFrame.size.height);
 }
 
-- (CGFloat)width
+- (CGFloat)zh_width
 {
     return self.frame.size.width;
 }
-- (void)setWidth:(CGFloat)width
+- (void)setZh_width:(CGFloat)zh_width
 {
     CGRect oldFrame = self.frame;
-    self.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, width, oldFrame.size.height);
+    self.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, zh_width, oldFrame.size.height);
 }
 
-- (CGFloat)height
+- (CGFloat)zh_height
 {
     return self.frame.size.height;
 }
--(void)setHeight:(CGFloat)height
+- (void)setZh_height:(CGFloat)zh_height
 {
     CGRect oldFrame = self.frame;
-    self.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, height);
+    self.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, zh_height);
 }
 
-- (CGPoint)origin
+- (CGPoint)zh_origin
 {
     return self.frame.origin;
 }
-- (void)setOrigin:(CGPoint)origin
+
+- (void)setZh_origin:(CGPoint)zh_origin
 {
     CGRect oldFrame = self.frame;
-    self.frame = CGRectMake(origin.x, origin.y, oldFrame.size.width, oldFrame.size.height);
+    self.frame = CGRectMake(zh_origin.x, zh_origin.y, oldFrame.size.width, oldFrame.size.height);
 }
 
-- (CGSize)size
+- (CGSize)zh_size
 {
     return self.bounds.size;
 }
-- (void)setSize:(CGSize)size
+
+- (void)setZh_size:(CGSize)zh_size
 {
-    self.width = size.width;
-    self.height = size.height;
+    self.zh_width = zh_size.width;
+    self.zh_height = zh_size.height;
 }
 
-- (CGFloat)centerX
+- (CGFloat)zh_centerX
 {
     return self.center.x;
 }
-- (void)setCenterX:(CGFloat)centerX
+
+- (void)setZh_centerX:(CGFloat)zh_centerX
 {
     CGPoint oldCenter = self.center;
-    self.center = CGPointMake(centerX, oldCenter.y);
+    self.center = CGPointMake(zh_centerX, oldCenter.y);
 }
 
-- (CGFloat)centerY
+- (CGFloat)zh_centerY
 {
     return self.center.y;
 }
-- (void)setCenterY:(CGFloat)centerY
+
+- (void)setZh_centerY:(CGFloat)zh_centerY
 {
     CGPoint oldCenter = self.center;
-    self.center = CGPointMake(oldCenter.x, centerY);
+    self.center = CGPointMake(oldCenter.x, zh_centerY);
 }
 
-- (CGFloat)left
+- (CGFloat)zh_left
 {
-    return self.x;
+    return self.zh_x;
 }
-- (void)setLeft:(CGFloat)left
+- (void)setZh_left:(CGFloat)zh_left
 {
-    self.x = left;
-}
-
-- (CGFloat)right
-{
-    return self.x + self.width;
-}
-- (void)setRight:(CGFloat)right
-{
-    self.x = right - self.width;
+    self.zh_x = zh_left;
 }
 
-- (CGFloat)top
+- (CGFloat)zh_right
 {
-    return self.y;
-}
-- (void)setTop:(CGFloat)top
-{
-    self.y = top;
+    return CGRectGetMaxX(self.frame);
 }
 
-- (CGFloat)bottom
+- (void)setZh_right:(CGFloat)zh_right
 {
-    return self.y + self.height;
-}
-- (void)setBottom:(CGFloat)bottom
-{
-    self.y = bottom - self.height;
+    self.zh_x = zh_right - self.zh_width;
 }
 
-- (CGPoint)topLeft
+- (CGFloat)zh_top
 {
-    return CGPointMake(self.left, self.top);
+    return self.zh_y;
 }
-- (void)setTopLeft:(CGPoint)topLeft
+- (void)setZh_top:(CGFloat)zh_top
 {
-    self.top = topLeft.y;
-    self.left = topLeft.x;
-}
-
-- (CGPoint)topRight
-{
-    return CGPointMake(self.right, self.top);
-}
-- (void)setTopRight:(CGPoint)topRight
-{
-    self.top = topRight.y;
-    self.right = topRight.x;
+    self.zh_y = zh_top;
 }
 
-- (CGPoint)bottomLeft
+- (CGFloat)zh_bottom
 {
-    return CGPointMake(self.x, self.bottom);
+    return CGRectGetMaxY(self.frame);
 }
-- (void)setBottomLeft:(CGPoint)bottomLeft
+- (void)setZh_bottom:(CGFloat)zh_bottom
 {
-    self.left = bottomLeft.x;
-    self.bottom = bottomLeft.y;
+    self.zh_y = zh_bottom - self.zh_height;
 }
 
-- (CGPoint)bottomRight
+- (CGPoint)zh_topLeft
 {
-    return CGPointMake(self.right, self.bottom);
+    return CGPointMake(self.zh_left, self.zh_top);
 }
-- (void)setBottomRight:(CGPoint)bottomRight
+- (void)setZh_topLeft:(CGPoint)zh_topLeft
 {
-    self.right = bottomRight.x;
-    self.bottom = bottomRight.y;
+    self.zh_top = zh_topLeft.y;
+    self.zh_left = zh_topLeft.x;
+}
+
+- (CGPoint)zh_topRight
+{
+    return CGPointMake(self.zh_right, self.zh_top);
+}
+- (void)setZh_topRight:(CGPoint)zh_topRight
+{
+    self.zh_top = zh_topRight.y;
+    self.zh_right = zh_topRight.x;
+}
+
+- (CGPoint)zh_bottomLeft
+{
+    return CGPointMake(self.zh_left, self.zh_bottom);
+}
+- (void)setZh_bottomLeft:(CGPoint)zh_bottomLeft
+{
+    self.zh_left = zh_bottomLeft.x;
+    self.zh_bottom = zh_bottomLeft.y;
+}
+
+- (CGPoint)zh_bottomRight
+{
+    return CGPointMake(self.zh_right, self.zh_bottom);
+}
+- (void)setZh_bottomRight:(CGPoint)zh_bottomRight
+{
+    self.zh_left = zh_bottomRight.x;
+    self.zh_bottom = zh_bottomRight.y;
 }
 
 @end
