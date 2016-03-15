@@ -91,7 +91,7 @@
     imageView.backgroundColor = [UIColor yellowColor];
     UIImage *image = [UIImage imageNamed:@"add"];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        imageView.image = [image zh_imageWithClearRoundWidth:10.0];
+        imageView.image = [image zh_cornerClipedImage];
     });
     
     [self.view addSubview:imageView];
@@ -107,53 +107,53 @@
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     
-    view.x = 12323;
-    NSAssert(view.x == 12323, @"");
+    view.zh_x = 12323;
+    NSAssert(view.zh_x == 12323, @"");
     
-    view.y = 422;
-    NSAssert(view.y == 422, @"");
+    view.zh_y = 422;
+    NSAssert(view.zh_y == 422, @"");
     
-    view.width = 134;
-    NSAssert(view.width == 134, @"");
+    view.zh_width = 134;
+    NSAssert(view.zh_width == 134, @"");
     
-    view.height = 543543;
-    NSAssert(view.height == 543543, @"");
+    view.zh_height = 543543;
+    NSAssert(view.zh_height == 543543, @"");
     
-    view.origin = CGPointMake(43243, 7676);
-    NSAssert(CGPointEqualToPoint(view.origin, CGPointMake(43243, 7676)), @"");
+    view.zh_origin = CGPointMake(43243, 7676);
+    NSAssert(CGPointEqualToPoint(view.zh_origin, CGPointMake(43243, 7676)), @"");
     
-    view.size = CGSizeMake(3543543, 65465);
-    NSAssert(CGSizeEqualToSize(view.size, CGSizeMake(3543543, 65465)), @"");
+    view.zh_size = CGSizeMake(3543543, 65465);
+    NSAssert(CGSizeEqualToSize(view.zh_size, CGSizeMake(3543543, 65465)), @"");
     
-    view.centerX = 5645;
-    NSAssert(view.centerX == 5645, @"");
+    view.zh_centerX = 5645;
+    NSAssert(view.zh_centerX == 5645, @"");
     
-    view.centerY = 6546;
-    NSAssert(view.centerY == 6546, @"");
+    view.zh_centerY = 6546;
+    NSAssert(view.zh_centerY == 6546, @"");
     
-    view.left = 54353;
-    NSAssert(view.left == 54353, @"");
+    view.zh_left = 54353;
+    NSAssert(view.zh_left == 54353, @"");
     
-    view.right = 54543;
-    NSAssert(view.right == 54543, @"");
+    view.zh_right = 54543;
+    NSAssert(view.zh_right == 54543, @"");
     
-    view.top= 42552;
-    NSAssert(view.top == 42552, @"");
+    view.zh_top= 42552;
+    NSAssert(view.zh_top == 42552, @"");
     
-    view.bottom = 7777;
-    NSAssert(view.bottom == 7777, @"");
+    view.zh_bottom = 7777;
+    NSAssert(view.zh_bottom == 7777, @"");
     
-    view.topLeft = CGPointMake(24234, 65465);
-    NSAssert(CGPointEqualToPoint(view.topLeft, CGPointMake(24234, 65465)), @"");
+    view.zh_topLeft = CGPointMake(24234, 65465);
+    NSAssert(CGPointEqualToPoint(view.zh_topLeft, CGPointMake(24234, 65465)), @"");
     
-    view.topRight = CGPointMake(2423422, 654232365);
-    NSAssert(CGPointEqualToPoint(view.topRight, CGPointMake(2423422, 654232365)), @"");
+    view.zh_topRight = CGPointMake(2423422, 654232365);
+    NSAssert(CGPointEqualToPoint(view.zh_topRight, CGPointMake(2423422, 654232365)), @"");
     
-    view.bottomLeft = CGPointMake(2425534, 6546665);
-    NSAssert(CGPointEqualToPoint(view.bottomLeft, CGPointMake(2425534, 6546665)), @"");
+    view.zh_bottomLeft= CGPointMake(2425534, 6546665);
+    NSAssert(CGPointEqualToPoint(view.zh_bottomLeft, CGPointMake(2425534, 6546665)), @"");
     
-    view.bottomRight = CGPointMake(2465765234, 6523233465);
-    NSAssert(CGPointEqualToPoint(view.bottomRight, CGPointMake(2465765234, 6523233465)), @"");
+    view.zh_bottomRight = CGPointMake(2465765234, 6523233465);
+    NSAssert(CGPointEqualToPoint(view.zh_bottomRight, CGPointMake(2465765234, 6523233465)), @"");
     
     
     view.layer.contents = (__bridge id)image.CGImage;

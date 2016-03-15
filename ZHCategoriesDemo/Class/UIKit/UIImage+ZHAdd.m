@@ -12,31 +12,6 @@
 @implementation UIImage (ZHAdd)
 
 /**
- *  为一个图片增加透明边框
- *
- *  @param roundWidth 透明边框的宽度
- *
- *  @return 增加了周围透明的图片
- */
-- (UIImage *)zh_imageWithClearRoundWidth:(CGFloat)roundWidth
-{
-    if (roundWidth < 0) {
-        roundWidth = 0;
-    }
-    
-    CGFloat imageWidth = self.size.width;
-    CGFloat imageHeight = self.size.height;
-    CGRect contextRect = CGRectMake(0, 0, imageWidth + roundWidth * 2, imageHeight + roundWidth * 2);
-    
-    UIGraphicsBeginImageContextWithOptions(contextRect.size, NO, 0.0);
-    [self drawInRect:CGRectMake(roundWidth, roundWidth, imageWidth, imageHeight)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-
-    return newImage;
-}
-
-/**
  *  获取应用的启动图
  *
  *  @return 应用的启动图
@@ -103,5 +78,58 @@
     return nil;
 }
 
+@end
+
+@implementation UIImage (ZHAddForClip)
+
+- (UIImage *)zh_cornerClipedImage
+{
+    return [self zh_cornerClipedImageWithBackGroundColor:nil];
+}
+
+- (UIImage *)zh_cornerClipedImageWithBackGroundColor:(UIColor *)bgColor
+{
+    if ([bgColor isEqual:[UIColor clearColor]]) {
+        bgColor = nil;
+    }
+    //计算考虑到scale的尺寸
+    CGSize selfSize = CGSizeMake(self.size.width, self.size.height);
+    
+    //保存之前的绘图上下文
+    UIGraphicsPushContext(UIGraphicsGetCurrentContext());
+    
+    //开始一个没有透明背景的上下文
+    if (!bgColor) {
+        UIGraphicsBeginImageContextWithOptions(selfSize, NO, self.scale);
+    }
+    else
+    {
+        UIGraphicsBeginImageContextWithOptions(selfSize, YES, self.scale);
+    }
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGRect imageRect = CGRectMake(0, 0, selfSize.width, selfSize.height);
+    UIBezierPath *ovalPath = [UIBezierPath bezierPathWithOvalInRect:imageRect];
+    
+    if (bgColor) {
+        [bgColor setFill];
+        CGContextFillRect(context, imageRect);
+    }
+    
+    //剪切上下文
+    [ovalPath addClip];
+    CGContextAddPath(context, ovalPath.CGPath);
+    
+    [self drawInRect:CGRectMake(0, 0, selfSize.width, selfSize.height)];
+    
+    //获取图片
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    //恢复上下文
+    UIGraphicsPopContext();
+    return image;
+}
 
 @end

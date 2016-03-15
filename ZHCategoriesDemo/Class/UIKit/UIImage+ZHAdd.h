@@ -11,15 +11,6 @@
 @interface UIImage (ZHAdd)
 
 /**
- *  为一个图片增加透明边框
- *
- *  @param roundWidth 透明边框的宽度
- *
- *  @return 增加了周围透明的图片
- */
-- (UIImage *)zh_imageWithClearRoundWidth:(CGFloat)roundWidth;
-
-/**
  *  获取应用的启动图
  *
  *  @return 应用的启动图
@@ -34,5 +25,25 @@
  *  @return 图片路径
  */
 + (NSString *)zh_availablePathWithImageName:(NSString *)imageName;
+
+@end
+
+@interface UIImage (ZHAddForClip)
+
+/**
+ *  返回一个带透明圆角的图片
+ *
+ *  @return 带透明圆角的图片
+ */
+- (UIImage *)zh_cornerClipedImage;
+
+/**
+ *  返回一个带特定颜色圆角的图片
+ *
+ *  @param bgColor 四角颜色
+ *
+ *  @return 带特定颜色圆角的图片
+ */
+- (UIImage *)zh_cornerClipedImageWithBackGroundColor:(UIColor *)bgColor;
 
 @end
