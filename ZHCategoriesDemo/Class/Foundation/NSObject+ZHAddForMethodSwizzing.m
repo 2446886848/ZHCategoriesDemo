@@ -12,6 +12,33 @@
 @implementation NSObject (ZHAddForMethodSwizzing)
 
 /**
+ *  替换当前类的两个方法
+ *
+ *  @param originalSelector 需要被替换的函数
+ *  @param swizzledSelector 替换时使用的函数
+ *
+ *  @return 替换是否成功
+ */
++ (BOOL)zh_zh_swizzleOriginal:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector
+{
+    return [NSObject zh_swizzleClass:self original:originalSelector withSwizzedClass:self swizzledSelector:swizzledSelector];
+}
+
+/**
+ *   替换当前类的某一方法
+ *
+ *  @param originalSelector 需要被替换的函数
+ *  @param swizzedClass     替换使用的类
+ *  @param swizzledSelector 替换时使用的函数
+ *
+ *  @return 替换是否成功
+ */
++ (BOOL)zh_zh_swizzleOriginal:(SEL)originalSelector withSwizzedClass:(Class)swizzedClass swizzledSelector:(SEL)swizzledSelector
+{
+    return [NSObject zh_swizzleClass:self original:originalSelector withSwizzedClass:swizzedClass swizzledSelector:swizzledSelector];
+}
+
+/**
  *  替换类的方法
  *
  *  @param class            需要被替换的类
