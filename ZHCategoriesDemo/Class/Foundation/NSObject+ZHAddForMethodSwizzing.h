@@ -18,7 +18,7 @@
  *
  *  @return 替换是否成功
  */
-+ (BOOL)zh_zh_swizzleOriginal:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector;
++ (BOOL)zh_swizzleOriginal:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector;
 
 /**
  *   替换当前类的某一方法
@@ -29,7 +29,7 @@
  *
  *  @return 替换是否成功
  */
-+ (BOOL)zh_zh_swizzleOriginal:(SEL)originalSelector withSwizzedClass:(Class)swizzedClass swizzledSelector:(SEL)swizzledSelector;
++ (BOOL)zh_swizzleOriginal:(SEL)originalSelector withSwizzedClass:(Class)swizzedClass swizzledSelector:(SEL)swizzledSelector;
 
 /**
  *  替换类的方法

@@ -19,7 +19,7 @@
  *
  *  @return 替换是否成功
  */
-+ (BOOL)zh_zh_swizzleOriginal:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector
++ (BOOL)zh_swizzleOriginal:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector
 {
     return [NSObject zh_swizzleClass:self original:originalSelector withSwizzedClass:self swizzledSelector:swizzledSelector];
 }
@@ -33,7 +33,7 @@
  *
  *  @return 替换是否成功
  */
-+ (BOOL)zh_zh_swizzleOriginal:(SEL)originalSelector withSwizzedClass:(Class)swizzedClass swizzledSelector:(SEL)swizzledSelector
++ (BOOL)zh_swizzleOriginal:(SEL)originalSelector withSwizzedClass:(Class)swizzedClass swizzledSelector:(SEL)swizzledSelector
 {
     return [NSObject zh_swizzleClass:self original:originalSelector withSwizzedClass:swizzedClass swizzledSelector:swizzledSelector];
 }
