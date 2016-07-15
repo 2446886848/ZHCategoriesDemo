@@ -19,6 +19,7 @@
 #import "NSBundle+ZHAdd.h"
 #import "UIControl+ZHAdd.h"
 #import "ZHControl.h"
+#import "NSObject+ZHAddForClassSwizzle.h"
 
 @interface ViewController ()
 
@@ -50,6 +51,31 @@
     
 //    [self testControlBlock];
     
+    [self testClassSwizzle];
+    
+}
+
+- (void)testClassSwizzle
+{
+    TokenInfo *tokenInfo = [self.view zh_swizzleSelector:@selector(setBackgroundColor:) usingBlock:^(MessageInfo *info) {
+        UIColor *color = [UIColor blueColor];
+        [info.originalInvocation setArgument:&color atIndex:2];
+        [info.originalInvocation invoke];
+        NSLog(@"arguments = %@", info.arguments);
+    }];
+    
+    UIView *view = [[UIView alloc] init];
+    
+    [view zh_swizzleSelector:@selector(setBackgroundColor:) usingBlock:^(MessageInfo *info) {
+        NSLog(@"sdfdsafdsfds");
+    }];
+    view.backgroundColor = [UIColor yellowColor];
+    
+    self.view.backgroundColor = [UIColor redColor];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [tokenInfo dispose];
+        self.view.backgroundColor = [UIColor redColor];
+    });
 }
 
 - (void)testControlBlock

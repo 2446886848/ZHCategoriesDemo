@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E839608A1D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = E83960891D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.m */; };
 		FC1246081C1C3CDF0081FE47 /* UIImage+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1246071C1C3CDF0081FE47 /* UIImage+ZHAdd.m */; };
 		FC12460A1C1C46CC0081FE47 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = FC1246091C1C46CC0081FE47 /* add.png */; };
 		FC2AD2371C2658CA00C3BB25 /* UIControl+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2AD2361C2658CA00C3BB25 /* UIControl+ZHAdd.m */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E83960881D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZHAddForClassSwizzle.h"; sourceTree = "<group>"; };
+		E83960891D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZHAddForClassSwizzle.m"; sourceTree = "<group>"; };
 		FC1246061C1C3CDF0081FE47 /* UIImage+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZHAdd.h"; sourceTree = "<group>"; };
 		FC1246071C1C3CDF0081FE47 /* UIImage+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZHAdd.m"; sourceTree = "<group>"; };
 		FC1246091C1C46CC0081FE47 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				FC5F659D1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m */,
 				FC5F65A71C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.h */,
 				FC5F65A81C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.m */,
+				E83960881D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.h */,
+				E83960891D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.m */,
 				FCA1A69D1C1BE78C003B1644 /* NSObject+ZHAddForMethodSwizzing.h */,
 				FCA1A69E1C1BE78C003B1644 /* NSObject+ZHAddForMethodSwizzing.m */,
 				FCF007BA1C1D118A00C2B299 /* NSBundle+ZHAdd.h */,
@@ -268,6 +273,7 @@
 				FC5F65851C190ED3008BFCA1 /* AppDelegate.m in Sources */,
 				FC5F65A51C191191008BFCA1 /* Dog.m in Sources */,
 				FCA1A69F1C1BE78C003B1644 /* NSObject+ZHAddForMethodSwizzing.m in Sources */,
+				E839608A1D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.m in Sources */,
 				FC5F65AC1C195E2B008BFCA1 /* UIColor+ZHAdd.m in Sources */,
 				FC5D005D1C1BC4D800BEA2A3 /* UIView+ZHAdd.m in Sources */,
 				FCF007BC1C1D118A00C2B299 /* NSBundle+ZHAdd.m in Sources */,
