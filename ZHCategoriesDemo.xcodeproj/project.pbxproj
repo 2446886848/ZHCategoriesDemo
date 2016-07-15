@@ -11,7 +11,7 @@
 		FC1246081C1C3CDF0081FE47 /* UIImage+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1246071C1C3CDF0081FE47 /* UIImage+ZHAdd.m */; };
 		FC12460A1C1C46CC0081FE47 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = FC1246091C1C46CC0081FE47 /* add.png */; };
 		FC2AD2371C2658CA00C3BB25 /* UIControl+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2AD2361C2658CA00C3BB25 /* UIControl+ZHAdd.m */; };
-		FC3345BB1C1BC7740067A278 /* woniu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC3345BA1C1BC7740067A278 /* woniu.jpg */; };
+		FC3345BB1C1BC7740067A278 /* woniu@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC3345BA1C1BC7740067A278 /* woniu@3x.jpg */; };
 		FC5D005D1C1BC4D800BEA2A3 /* UIView+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5D005C1C1BC4D800BEA2A3 /* UIView+ZHAdd.m */; };
 		FC5F65821C190ED3008BFCA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65811C190ED3008BFCA1 /* main.m */; };
 		FC5F65851C190ED3008BFCA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5F65841C190ED3008BFCA1 /* AppDelegate.m */; };
@@ -40,7 +40,7 @@
 		FC1246091C1C46CC0081FE47 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		FC2AD2351C2658CA00C3BB25 /* UIControl+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ZHAdd.h"; sourceTree = "<group>"; };
 		FC2AD2361C2658CA00C3BB25 /* UIControl+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ZHAdd.m"; sourceTree = "<group>"; };
-		FC3345BA1C1BC7740067A278 /* woniu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woniu.jpg; sourceTree = "<group>"; };
+		FC3345BA1C1BC7740067A278 /* woniu@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "woniu@3x.jpg"; sourceTree = "<group>"; };
 		FC5D005B1C1BC4D800BEA2A3 /* UIView+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZHAdd.h"; sourceTree = "<group>"; };
 		FC5D005C1C1BC4D800BEA2A3 /* UIView+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZHAdd.m"; sourceTree = "<group>"; };
 		FC5F657D1C190ED3008BFCA1 /* ZHCategoriesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHCategoriesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +113,7 @@
 				FC5F65841C190ED3008BFCA1 /* AppDelegate.m */,
 				FC5F65861C190ED3008BFCA1 /* ViewController.h */,
 				FC5F65871C190ED3008BFCA1 /* ViewController.m */,
-				FC3345BA1C1BC7740067A278 /* woniu.jpg */,
+				FC3345BA1C1BC7740067A278 /* woniu@3x.jpg */,
 				FC1246091C1C46CC0081FE47 /* add.png */,
 				FC5F65891C190ED3008BFCA1 /* Main.storyboard */,
 				FC5F658C1C190ED3008BFCA1 /* Assets.xcassets */,
@@ -251,7 +251,7 @@
 			files = (
 				FC5F65901C190ED3008BFCA1 /* LaunchScreen.storyboard in Resources */,
 				FC5F658D1C190ED3008BFCA1 /* Assets.xcassets in Resources */,
-				FC3345BB1C1BC7740067A278 /* woniu.jpg in Resources */,
+				FC3345BB1C1BC7740067A278 /* woniu@3x.jpg in Resources */,
 				FC12460A1C1C46CC0081FE47 /* add.png in Resources */,
 				FC5F658B1C190ED3008BFCA1 /* Main.storyboard in Resources */,
 			);

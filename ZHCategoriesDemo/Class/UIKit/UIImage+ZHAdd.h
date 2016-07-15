@@ -46,4 +46,19 @@
  */
 - (UIImage *)zh_cornerClipedImageWithBackGroundColor:(UIColor *)bgColor;
 
+/**
+ *  异步切图为圆角
+ *
+ *  @param block 切好图片之后的回调（会在主线程回调）
+ */
+- (void)zh_asyncCornerClipComplete:(void(^)(UIImage *newImage))block;
+
+/**
+ *  异步切图为圆角
+ *
+ *  @param pathBlock 切割路径
+ *  @param block     切好图片之后的回调（会在主线程回调）
+ */
+- (void)zh_asyncCornerClipWithPath:(CGPathRef(^)(CGFloat imageWidth, CGFloat imageHeight))pathBlock complete:(void(^)(UIImage *newImage))block;
+
 @end

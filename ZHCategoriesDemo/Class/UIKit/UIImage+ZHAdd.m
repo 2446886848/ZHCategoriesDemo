@@ -132,4 +132,53 @@
     return image;
 }
 
+- (void)zh_asyncCornerClipComplete:(void(^)(UIImage *newImage))block
+{
+    [self zh_asyncCornerClipWithPath:^CGPathRef(CGFloat imageWidth, CGFloat imageHeight) {
+        return [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, imageWidth, imageHeight)].CGPath;
+    } complete:block];
+}
+
+- (void)zh_asyncCornerClipWithPath:(CGPathRef(^)(CGFloat imageWidth, CGFloat imageHeight))pathBlock complete:(void(^)(UIImage *newImage))block
+{
+    NSParameterAssert(block);
+    if (!block) {
+        return;
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        CGImageRef imageRef = self.CGImage;
+        size_t inputWidth = CGImageGetWidth(imageRef);
+        size_t inputHeight = CGImageGetHeight(imageRef);
+        size_t bytesPerPixel = 4;
+        size_t bitsPerComponent = 8;
+        
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        
+        UInt32 *inputPixels = (UInt32 *)calloc(inputHeight * inputWidth, sizeof(UInt32));
+        
+        CGContextRef context = CGBitmapContextCreate(inputPixels, inputWidth, inputHeight,
+                                                     bitsPerComponent, bytesPerPixel * inputWidth, colorSpace,
+                                                     kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+        if (pathBlock) {
+            CGContextAddPath(context, pathBlock(inputWidth, inputHeight));
+            
+            CGContextClip(context);
+        }
+        
+        CGContextDrawImage(context, CGRectMake(0, 0, inputWidth, inputHeight), imageRef);
+        
+        CGImageRef newImageRef = CGBitmapContextCreateImage(context);
+        UIImage *newImage = [UIImage imageWithCGImage:newImageRef scale:self.scale orientation:self.imageOrientation];
+        
+        CGContextRelease(context);
+        CGColorSpaceRelease(colorSpace);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            block(newImage);
+        });
+    });
+}
+
 @end

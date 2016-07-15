@@ -44,14 +44,14 @@
 //    [self testViewCategories];
 //    [self testLayerCategories];
     
-//    [self testRoundedImage];
+    [self testRoundedImage];
 //    [self testApplicationPath];
     
 //    [self testBundle];
     
 //    [self testControlBlock];
     
-    [self testClassSwizzle];
+//    [self testClassSwizzle];
     
 }
 
@@ -114,11 +114,12 @@
 - (void)testRoundedImage
 {
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    imageView.backgroundColor = [UIColor yellowColor];
-    UIImage *image = [UIImage imageNamed:@"add"];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        imageView.image = [image zh_cornerClipedImage];
-    });
+//    imageView.backgroundColor = [UIColor yellowColor];
+    UIImage *image = [UIImage imageNamed:@"woniu.jpg"];
+    
+    [image zh_asyncCornerClipComplete:^(UIImage *newImage) {
+        imageView.image = newImage;
+    }];
     
     [self.view addSubview:imageView];
     
