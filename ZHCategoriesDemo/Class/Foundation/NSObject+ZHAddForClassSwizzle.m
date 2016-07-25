@@ -14,12 +14,13 @@
 - (NSArray *)zh_arguments;
 @end
 
-@implementation MessageInfo
+@interface MessageInfo()
 
-- (NSArray *)arguments
-{
-    return self.originalInvocation.zh_arguments;
-}
+@property (nonatomic, strong) NSArray *arguments;
+
+@end
+
+@implementation MessageInfo
 
 @end
 
@@ -38,7 +39,7 @@
 }
 @end
 
-static NSString *const kClassSwizzlePrefix = @"ClassSwizzled_";
+static NSString *const kClassSwizzlePrefix = @"_ClassSwizzled_";
 
 TokenInfo * swizzle_object(id obj, SEL aSelector, SwizzleBlock block);
 
@@ -145,6 +146,7 @@ static void __FORWARD_INVOCATION__(__unsafe_unretained NSObject *self, SEL selec
         MessageInfo *info = [[MessageInfo alloc] init];
         info.instance = self;
         info.originalInvocation = invocation;
+        info.arguments = invocation.zh_arguments;
         block(info);
     }
     else
@@ -185,7 +187,7 @@ Class swizzedClass(id obj) {
         return nil;
     }
     
-    const char *subclassName = [originClassName stringByAppendingString:kClassSwizzlePrefix].UTF8String;
+    const char *subclassName = [kClassSwizzlePrefix stringByAppendingString:originClassName].UTF8String;
     Class subclass = objc_getClass(subclassName);
     if (subclass) {
         return subclass;
@@ -254,7 +256,8 @@ void swizzedSelector(Class class, SEL selector) {
 
 TokenInfo * swizzle_object(id obj, SEL aSelector, SwizzleBlock block) {
     Class newClass = swizzedClass(obj);
-    NSCAssert([obj respondsToSelector:aSelector], @"obj:%@ doesn't respondsToSelector:%@", obj, NSStringFromSelector(aSelector));
+
+    NSCAssert(class_getInstanceMethod([obj class], aSelector), @"obj:%@ doesn't respondsToSelector:%@", obj, NSStringFromSelector(aSelector));
     
     if (newClass) {
         object_setClass(obj, newClass);

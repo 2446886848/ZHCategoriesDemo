@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) Dog *dog;
 
+- (void)test;
+
 @end

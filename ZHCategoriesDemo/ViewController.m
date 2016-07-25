@@ -44,14 +44,14 @@
 //    [self testViewCategories];
 //    [self testLayerCategories];
     
-    [self testRoundedImage];
+//    [self testRoundedImage];
 //    [self testApplicationPath];
     
 //    [self testBundle];
     
 //    [self testControlBlock];
     
-//    [self testClassSwizzle];
+    [self testClassSwizzle];
     
 }
 
@@ -66,16 +66,29 @@
     
     UIView *view = [[UIView alloc] init];
     
-    [view zh_swizzleSelector:@selector(setBackgroundColor:) usingBlock:^(MessageInfo *info) {
+    [view zh_swizzleSelector:@selector(backgroundColor) usingBlock:^(MessageInfo *info) {
         NSLog(@"sdfdsafdsfds");
+        [info.originalInvocation invoke];
     }];
     view.backgroundColor = [UIColor yellowColor];
+    NSLog(@"view.backgroundColor %@", view.backgroundColor);
     
     self.view.backgroundColor = [UIColor redColor];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [tokenInfo dispose];
         self.view.backgroundColor = [UIColor redColor];
     });
+    
+    Person *person = [[Person alloc] init];
+    [person zh_swizzleSelector:@selector(hash) usingBlock:^(MessageInfo *info) {
+        
+    }];
+    [person hash];
+    [person zh_swizzleSelector:@selector(description) usingBlock:^(MessageInfo *info) {
+        [info.originalInvocation invoke];
+    }];
+    
+    NSLog(@"person = %@", person);
 }
 
 - (void)testControlBlock
