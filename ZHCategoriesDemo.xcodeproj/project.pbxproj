@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E839608A1D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = E83960891D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.m */; };
+		E87CE1591D586C9600C75925 /* UIKit+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = E87CE1581D586C9600C75925 /* UIKit+Property.m */; };
 		FC1246081C1C3CDF0081FE47 /* UIImage+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1246071C1C3CDF0081FE47 /* UIImage+ZHAdd.m */; };
 		FC12460A1C1C46CC0081FE47 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = FC1246091C1C46CC0081FE47 /* add.png */; };
 		FC2AD2371C2658CA00C3BB25 /* UIControl+ZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2AD2361C2658CA00C3BB25 /* UIControl+ZHAdd.m */; };
@@ -35,6 +36,8 @@
 /* Begin PBXFileReference section */
 		E83960881D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZHAddForClassSwizzle.h"; sourceTree = "<group>"; };
 		E83960891D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZHAddForClassSwizzle.m"; sourceTree = "<group>"; };
+		E87CE1571D586C9600C75925 /* UIKit+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Property.h"; sourceTree = "<group>"; };
+		E87CE1581D586C9600C75925 /* UIKit+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+Property.m"; sourceTree = "<group>"; };
 		FC1246061C1C3CDF0081FE47 /* UIImage+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZHAdd.h"; sourceTree = "<group>"; };
 		FC1246071C1C3CDF0081FE47 /* UIImage+ZHAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZHAdd.m"; sourceTree = "<group>"; };
 		FC1246091C1C46CC0081FE47 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				FCF566971C1EEE5D00D7242C /* UIViewController+ZHAdd.m */,
 				FCF5669C1C1EF0CF00D7242C /* CALayer+ZHAdd.h */,
 				FCF5669D1C1EF0CF00D7242C /* CALayer+ZHAdd.m */,
+				E87CE1571D586C9600C75925 /* UIKit+Property.h */,
+				E87CE1581D586C9600C75925 /* UIKit+Property.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				FC1246081C1C3CDF0081FE47 /* UIImage+ZHAdd.m in Sources */,
 				FC5F659F1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m in Sources */,
 				FC5F65821C190ED3008BFCA1 /* main.m in Sources */,
+				E87CE1591D586C9600C75925 /* UIKit+Property.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

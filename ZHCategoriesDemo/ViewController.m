@@ -20,6 +20,7 @@
 #import "UIControl+ZHAdd.h"
 #import "ZHControl.h"
 #import "NSObject+ZHAddForClassSwizzle.h"
+#import "UIKit+Property.h"
 
 @interface ViewController ()
 
@@ -51,8 +52,18 @@
     
 //    [self testControlBlock];
     
-    [self testClassSwizzle];
+//    [self testClassSwizzle];
     
+    [self testUIKitProperty];
+}
+
+- (void)testUIKitProperty
+{
+//    UIView *view = UIView.zh_instance.zh_frame(100, 100, 100, 100).zh_backgroundColor([UIColor redColor]).zh_alpha(0.9).zh_borderColor([UIColor yellowColor]).zh_borderWidth(2.0).zh_cornerRadius(10.0);
+    UIButton *button = UIButton.zh_button(UIButtonTypeCustom).zh_title(@"aaa", UIControlStateNormal).zh_titleColor([UIColor greenColor], UIControlStateHighlighted);
+    button.zh_frame(100, 100, 100, 100).zh_backgroundColor([UIColor redColor]).zh_alpha(0.9).zh_borderColor([UIColor yellowColor]).zh_borderWidth(2.0).zh_cornerRadius(10.0);
+    
+    [self.view addSubview:button];
 }
 
 - (void)testClassSwizzle
