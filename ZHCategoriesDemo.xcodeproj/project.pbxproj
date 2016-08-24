@@ -36,6 +36,8 @@
 /* Begin PBXFileReference section */
 		E83960881D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZHAddForClassSwizzle.h"; sourceTree = "<group>"; };
 		E83960891D38825F004AA328 /* NSObject+ZHAddForClassSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZHAddForClassSwizzle.m"; sourceTree = "<group>"; };
+		E86D04B41D6D45CE00E0EF5A /* Foundation+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+ZHAdd.h"; sourceTree = "<group>"; };
+		E86D04B51D6D45DA00E0EF5A /* UIKit+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+ZHAdd.h"; sourceTree = "<group>"; };
 		E87CE1571D586C9600C75925 /* UIKit+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Property.h"; sourceTree = "<group>"; };
 		E87CE1581D586C9600C75925 /* UIKit+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+Property.m"; sourceTree = "<group>"; };
 		FC1246061C1C3CDF0081FE47 /* UIImage+ZHAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZHAdd.h"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		FC5F659B1C190F5C008BFCA1 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				E86D04B41D6D45CE00E0EF5A /* Foundation+ZHAdd.h */,
 				FC5F659C1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.h */,
 				FC5F659D1C190F5C008BFCA1 /* NSObject+ZHAddForKVO.m */,
 				FC5F65A71C1926CD008BFCA1 /* NSThread+ZHAddForRunloop.h */,
@@ -164,6 +167,7 @@
 		FC5F659E1C190F5C008BFCA1 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				E86D04B51D6D45DA00E0EF5A /* UIKit+ZHAdd.h */,
 				FC5F65AA1C195E2B008BFCA1 /* UIColor+ZHAdd.h */,
 				FC5F65AB1C195E2B008BFCA1 /* UIColor+ZHAdd.m */,
 				FC5D005B1C1BC4D800BEA2A3 /* UIView+ZHAdd.h */,
